@@ -25,3 +25,8 @@ urlpatterns = [
     path('', include('ranking.urls')),
     path('user/', include('user.urls')),
 ]
+
+# 设置404，500状态码
+from index import views
+handler404 = views.page_not_found
+handler500 = views.page_not_found
