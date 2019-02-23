@@ -19,3 +19,7 @@ class IndexViews(View):
         down_ranking = Dynamic.objects.select_related('song').order_by('-dynamic_down').all()[:6]
         all_ranking = [search_song, down_ranking]
         return render(request, 'index/index.html', locals())
+
+
+def page_not_found(request):
+    return render(request, 'base/error404.html', status=404)
